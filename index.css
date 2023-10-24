@@ -8,9 +8,56 @@
   height: 100vh;
   background-color: #fcf9f2;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   overflow: hidden;
+}
+
+.start {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: bold;
+  background-color: #00ff08;
+  padding: 10px;
+}
+.header {
+  width: 300px;
+  margin-bottom: 2vh;
+}
+.header__section {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  background-color: #fff700;
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.statistics {
+  display: flex;
+}
+.statistics section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.statistics section div {
+  background-color: #7c6013;
+  width: 80px;
+  height: 60px;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.statistics section p {
+  margin: 0;
 }
 .game {
   height: 300px;
@@ -110,11 +157,11 @@
   border-radius: 50%;
   background-color: #0000001f;
   overflow: hidden;
-  box-shadow: inset -10px 10px 20px #00000062, inset 6px -5px 20px #ffffffb1;
+  box-shadow: inset -10px 10px 20px #00000062, inset 6px -5px 20px #ffffffb1,
+    -3px 3px 4px #00000062, 3px -3px 4px #ffffffb1;
 }
 .side {
   position: absolute;
-
   height: 100px;
   width: 100px;
   border-radius: 50%;
@@ -144,8 +191,19 @@
   width: 60px;
   border-radius: 50%;
   background-color: #ddff0083;
-  box-shadow: inset -10px 10px 20px #ffffff9e, inset 6px -5px 20px #000000b5;
+  box-shadow: inset -10px 10px 20px #ffffff9e, inset 6px -5px 20px #000000b5,
+    -10px 13px 20px #000000c7;
   transition: left 0.15s, top 0.15s;
+}
+.thumb-sticks div {
+  height: 10px;
+  width: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 57%;
+  top: 27%;
+  box-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff, 0px 0px 8px #fff;
 }
 
 /*todo X+X+X+X+X+X+ шаблоны +X+X+X+X+X+X*/
@@ -161,4 +219,12 @@
 }
 .cp {
   cursor: pointer;
+}
+.br {
+  border-radius: 10px;
+}
+
+.bh {
+  box-shadow: inset -3px 3px 4px #ffffffde, inset 3px -3px 4px #00000085,
+    -3px 3px 4px #00000085;
 }
