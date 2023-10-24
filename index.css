@@ -7,6 +7,8 @@
 * {
   box-sizing: border-box;
   font-family: "better-vcr", "Trebuchet MS";
+  padding: 0;
+  margin: 0;
 }
 
 .body {
@@ -16,7 +18,7 @@
   background-image: linear-gradient(to bottom left, #fcf9f2, #00000050);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  text-shadow: -3px 2px 4px #00000080, 2px -2px 4px #ffffff80;
+  text-shadow: -3px 2px 4px #00000080, 2px -1px 4px #ffffff80;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
@@ -32,6 +34,7 @@
   background-color: #00ff08;
   padding: 10px;
   white-space: nowrap;
+  z-index: 5;
 }
 .header {
   width: 300px;
@@ -50,6 +53,38 @@
   margin: 5px;
   font-size: 20px;
   font-weight: bold;
+  position: relative;
+}
+.icon span {
+  background-color: #353535;
+  border-radius: 50%;
+  position: absolute;
+  color: #929292;
+  text-shadow: 0px 1px 1px #ffffff;
+  font-size: 12px;
+  height: 10px;
+  width: 10px;
+  box-shadow: -1px 2px 2px #000000a8;
+}
+.icon span:nth-child(1) {
+  top: 3px;
+  left: 3px;
+  transform: rotate(10deg);
+}
+.icon span:nth-child(2) {
+  top: 3px;
+  right: 3px;
+  transform: rotate(25deg);
+}
+.icon span:nth-child(3) {
+  bottom: 3px;
+  left: 3px;
+  transform: rotate(-30deg);
+}
+.icon span:nth-child(4) {
+  bottom: 3px;
+  right: 3px;
+  transform: rotate(4deg);
 }
 
 .statistics {
@@ -177,7 +212,7 @@
   position: fixed;
   right: 1vw;
   bottom: 1vh;
-
+  z-index: 5;
   height: 100px;
   width: 100px;
   border-radius: 50%;
@@ -243,6 +278,22 @@
   padding: 20px;
   white-space: nowrap;
 }
+.space {
+  margin-top: 2vh;
+  padding: 1px;
+  background-color: #000000;
+  border-radius: 5px;
+  box-shadow: 1px -1px 1px #fff, -2px 4px 6px #000;
+}
+.space-btn {
+  width: 300px;
+  height: 30px;
+  background-color: #434343;
+  border-radius: 5px;
+  color: slategray;
+  transform: translate(1px, -1px);
+  box-shadow: inset 2px -2px 3px #000, inset -1px 1px 3px #fff;
+}
 
 .flying-balls {
   position: absolute;
@@ -268,8 +319,7 @@
   width: 40px;
   border-radius: 50%;
   background-color: #00ddff;
-  /* box-shadow: inset 15px -15px 20px #0000008c, inset 5px -5px 15px #0000008c,
-    -10px 13px 20px #0000008c; */
+
   transition: left 0.15s, top 0.15s;
   animation: circle-rotation-left 7s linear infinite;
 }
