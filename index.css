@@ -1,12 +1,22 @@
+@font-face {
+  font-family: better-vcr;
+  src: url("./better-vcr4.0.ttf") format("truetype");
+  font-size: 10px;
+}
+
 * {
   box-sizing: border-box;
+  font-family: "better-vcr", "Trebuchet MS";
 }
 
 .body {
   display: flex;
   justify-content: center;
   height: 100vh;
-  background-color: #fcf9f2;
+  background-image: linear-gradient(to bottom left, #fcf9f2, #00000050);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  text-shadow: -3px 2px 4px #00000080, 2px -2px 4px #ffffff80;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
@@ -17,10 +27,11 @@
   left: 50%;
   top: 60%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  font-size: 20px;
   font-weight: bold;
   background-color: #00ff08;
   padding: 10px;
+  white-space: nowrap;
 }
 .header {
   width: 300px;
@@ -29,6 +40,7 @@
 .header__section {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .icon {
@@ -36,18 +48,16 @@
   width: 80px;
   height: 80px;
   margin: 5px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
 }
+
 .statistics {
-  display: flex;
-}
-.statistics section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.statistics section div {
+.statistics div {
   background-color: #7c6013;
   width: 80px;
   height: 60px;
@@ -56,8 +66,13 @@
   font-weight: bold;
   color: #fff;
 }
-.statistics section p {
+.statistics p {
   margin: 0;
+  font-size: 10px;
+}
+.rule {
+  font-size: 10px;
+  text-align: center;
 }
 .game {
   height: 300px;
@@ -130,7 +145,18 @@
 .num2048 {
   background-color: #fff700;
   color: #000;
-  box-shadow: 0px 0px 10px #fff700, 0px 0px 20px #fff700, 0px 0px 30px #fff700;
+  box-shadow: 0px 0px 4px #fff700, 0px 0px 8px #fff700, 0px 0px 16px #fff700;
+}
+
+.num4096 {
+  background-color: #ff4bcd;
+  color: #000;
+  box-shadow: 0px 0px 4px #ff4bcd, 0px 0px 8px #ff4bcd, 0px 0px 16px #ff4bcd;
+}
+.num8192 {
+  background-color: #8d0090;
+  color: #ffffff;
+  box-shadow: 0px 0px 4px #8d0090, 0px 0px 8px #8d0090, 0px 0px 16px #8d0090;
 }
 .num16384 {
   background-color: #00ff08;
@@ -191,8 +217,8 @@
   width: 60px;
   border-radius: 50%;
   background-color: #ddff0083;
-  box-shadow: inset -10px 10px 20px #ffffff9e, inset 6px -5px 20px #000000b5,
-    -10px 13px 20px #000000c7;
+  /* box-shadow: inset 15px -15px 20px #0000008c, inset 5px -5px 15px #0000008c,
+    -10px 13px 20px #0000008c; */
   transition: left 0.15s, top 0.15s;
 }
 .thumb-sticks div {
@@ -204,6 +230,70 @@
   left: 57%;
   top: 27%;
   box-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff, 0px 0px 8px #fff;
+}
+
+.game-over {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+  font-weight: bold;
+  background-color: #ff1100;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+.flying-balls {
+  position: absolute;
+  /* background-color: #003aff; */
+  top: 56%;
+  height: 40px;
+  width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  animation: circle-rotation-right 7s linear infinite;
+}
+@keyframes circle-rotation-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.flying-balls div {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #00ddff;
+  /* box-shadow: inset 15px -15px 20px #0000008c, inset 5px -5px 15px #0000008c,
+    -10px 13px 20px #0000008c; */
+  transition: left 0.15s, top 0.15s;
+  animation: circle-rotation-left 7s linear infinite;
+}
+@keyframes circle-rotation-left {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.flying-balls div p {
+  height: 5px;
+  width: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 10px 0px 0px 25px;
+
+  box-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff, 0px 0px 8px #fff;
+}
+.flying-balls__one {
+}
+.flying-balls__two {
 }
 
 /*todo X+X+X+X+X+X+ шаблоны +X+X+X+X+X+X*/
@@ -227,4 +317,9 @@
 .bh {
   box-shadow: inset -3px 3px 4px #ffffffde, inset 3px -3px 4px #00000085,
     -3px 3px 4px #00000085;
+}
+
+.bh-sfer {
+  box-shadow: inset 15px -15px 20px #00000054, inset 5px -5px 15px #00000054,
+    -10px 13px 20px #00000085;
 }

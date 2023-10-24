@@ -8,22 +8,20 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body class="body">
-    <div class="start br bh cp">start game</div>
+    <div class="start br bh cp hide">START GAME</div>
     <div class="header">
       <div class="header__section">
         <div class="icon br df-c-c bh">2048</div>
-        <div class="statistics">
-          <section>
-            <div class="your-best br df-c-c bh">0</div>
-            <p>your best</p>
-          </section>
-          <section>
-            <div class="all-best br df-c-c bh">0</div>
-            <p>all best</p>
-          </section>
-        </div>
+        <section class="statistics">
+          <div class="your-best br df-c-c bh">0</div>
+          <p>your best</p>
+        </section>
+        <section class="statistics">
+          <div class="all-best br df-c-c bh">0</div>
+          <p>all best</p>
+        </section>
       </div>
-      <p>Join the numbers and get to the 2048 tile!</p>
+      <p class="rule">Join the numbers and get to the 2048 tile!</p>
     </div>
     <div class="game">
       <div class="num num2">2</div>
@@ -48,11 +46,19 @@
       <div class="side right hide"></div>
       <div class="side up hide"></div>
       <div class="side down hide"></div>
-      <div class="thumb-sticks cp">
+      <div class="thumb-sticks cp bh-sfer">
         <div></div>
       </div>
     </div>
-    <div class="end"></div>
+    <div class="game-over br bh cp hide">GAME OVER</div>
+    <div class="flying-balls">
+      <div class="flying-balls__one bh-sfer">
+        <p></p>
+      </div>
+      <div class="flying-balls__two bh-sfer">
+        <p></p>
+      </div>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
