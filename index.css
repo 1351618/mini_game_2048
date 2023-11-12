@@ -23,6 +23,11 @@
   align-items: center;
   overflow: hidden;
 }
+.body__content {
+  max-width: 300px;
+  width: 100%;
+  min-width: 250px;
+}
 
 .start {
   position: absolute;
@@ -37,13 +42,22 @@
   z-index: 5;
 }
 .header {
-  width: 300px;
+  width: 100%;
   margin-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
 }
 .header__section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.header__section p {
+  width: 100%;
+  overflow-wrap: break-word;
+  font-size: 15px;
+  text-align: center;
 }
 
 .icon {
@@ -110,8 +124,10 @@
   text-align: center;
 }
 .game {
-  height: 300px;
-  width: 300px;
+  aspect-ratio: 1 / 1;
+  max-width: 300px;
+  width: 100%;
+  min-width: 250px;
   padding: 10px;
   background-color: #bcaba4;
   align-items: center;
@@ -286,8 +302,11 @@
   box-shadow: 1px -1px 1px #fff, -2px 4px 6px #000;
 }
 .space-btn {
-  width: 300px;
+  /* width: 300px; */
   height: 30px;
+  max-width: 300px;
+  width: 100%;
+  min-width: 250px;
   background-color: #434343;
   border-radius: 5px;
   color: slategray;
@@ -349,7 +368,7 @@
 /*todo X+X+X+X+X+X+ шаблоны +X+X+X+X+X+X*/
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .df-c-c {
